@@ -42,10 +42,10 @@ class Helper(IO_Object):
         ( "description", "" ),                # s
         ( "family", "", ),                    # s
         ( "module", "", ),                    # s
-        ( "chain", "", ),                     # s
         ( "ports", [ ( "", "" ), ], ),        # a(ss)
+        ( "chain", "", ),                     # s
         )
-    DBUS_SIGNATURE = '(ssssssa(ss))'
+    DBUS_SIGNATURE = '(sssssa(ss)s)'
     ADDITIONAL_ALNUM_CHARS = [ "-", "." ]
     PARSER_REQUIRED_ELEMENT_ATTRS = {
         "short": None,
@@ -64,7 +64,7 @@ class Helper(IO_Object):
         self.description = ""
         self.module = ""
         self.family = ""
-        self.chain = "PRELOADING"
+        self.chain = "PREROUTING"
         self.ports = [ ]
 
     def cleanup(self):
@@ -115,7 +115,7 @@ class Helper(IO_Object):
                 raise FirewallError(errors.INVALID_MODULE,
                                     "Module name '%s' too short" % config)
         elif item == "chain":
-            check_chain(config)
+            self.check_chain(config)
 
 # PARSER
 
