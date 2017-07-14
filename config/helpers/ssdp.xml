@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<helper module="nf_conntrack_ssdp" version="1" chain="OUTPUT" family="ipv4">
+  <port protocol="udp" port="1900"/>
+</helper>
+

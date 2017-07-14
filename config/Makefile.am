@@ -72,6 +72,7 @@ CONFIG_FILES = \
 	helpers/sane.xml \
 	helpers/sip.xml \
 	helpers/snmp.xml \
+	helpers/ssdp.xml \
 	helpers/tftp.xml \
 	icmptypes/address-unreachable.xml \
 	icmptypes/bad-header.xml \
@@ -208,6 +209,7 @@ CONFIG_FILES = \
 	services/snmp.xml \
 	services/spideroak-lansync.xml \
 	services/squid.xml \
+	services/ssdp.xml \
 	services/ssh.xml \
 	services/synergy.xml \
 	services/syslog-tls.xml \
